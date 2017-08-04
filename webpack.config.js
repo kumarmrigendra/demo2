@@ -16,8 +16,18 @@ module.exports = {
     entry: "./index.js",
     plugins: [HtmlWebpackPluginConfig, new CleanWebpackPlugin(['dist'])],
     output: {
-        path:     DIST_DIR,
+        path: DIST_DIR,
         filename: "bundle.js"
+    },
+    module: {
+        loaders: [{
+            test: /\.jsx?$/,
+            exclude: /node_modules/,
+            loader: 'babel-loader',
+            query: {
+            presets : ['es2015', 'react']
+            }
+        }]
     },
     devtool: 'inline-source-map',
     resolve: {
