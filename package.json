@@ -28,6 +28,7 @@
   },
   "devDependencies": {
     "clean-webpack-plugin": "^0.1.16",
+    "ejs": "^2.5.7",
     "file-loader": "^0.11.2",
     "google_my_business": "^2.7.1",
     "html-webpack-plugin": "^2.30.1",

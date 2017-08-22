@@ -1,0 +1,72 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">
+    <title>Location</title>
+    <meta content="width=device-width,initial-scale=1" name=viewport>
+    <link rel="stylesheet" href="https://getbootstrap.com/docs/3.3/dist/css/bootstrap.min.css" />
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        #collection {
+            background: url(http://www.hazoorilaljewellers.com/common/images/collection.jpg) top center no-repeat #020f18;
+            background-size: 100% 100%;
+            color: #fff;
+        }
+        .margin-top-50{
+            margin-top: 50px;
+        }
+        .logo {
+            /* float: left; */
+            margin: 13px 0 0;
+        }
+
+        .logo, ul#nav {
+            text-align: center;
+        }
+
+        .gMap{
+            width: 400px;
+            height: 400px;
+            background-color: #fff;
+        }
+        .locations{
+            border: 1px solid rgba(255, 255, 255, .2);
+            padding: 10px;
+        }
+        
+    </style>
+    <script>
+        var reviews = <%- JSON.stringify(store) %>;
+        console.log('reviews', reviews);
+    </script>
+</head>  
+<body id="collection">  
+    <div class="container">
+        <div class="row margin-top-50">
+            <div class="col-md-3"></div>
+        </div>
+        <div class="layout">
+            <figure class="logo"><a href="/"><img src="http://hazoorilaljewellers.com/common/images/logo.png" alt="Hazoorilal jewellers logo"></a>
+            </figure>
+        </div>
+        <div class="row margin-top-50">
+            <div class="col-md-3">
+                <h1>Our Store</h1>
+                <div class="locations">
+                    <p>HAZOORILAL JEWELLERS PRIVATE LIMITED</p>
+                        <% if (store) { %>
+                            <div><%= store.formatted_address %></div>
+                        <% } %>
+                </div>
+            </div>
+            <div class="col-md-9 pull-right">
+                <div class="gMap"></div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>  
+</html>
